@@ -1,3 +1,4 @@
+import atexit
 from brightpi import *
 
 brightPi = BrightPi()
@@ -13,10 +14,12 @@ ON = 1
 OFF = 0
 
 leds = LED_WHITE
-try:
+while True:
     brightPi.set_led_on_off(leds, OFF)
 
     brightPi.set_led_on_off(LED_IR, ON)
 
-except KeyboardInterrupt:
+def exit_handler():
     switch_leds_off()
+
+atexit.register(exit_handler)

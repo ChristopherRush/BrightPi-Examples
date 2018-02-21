@@ -5,6 +5,7 @@ brightPi = BrightPi()
 # This method is used to reset the SC620 to its original state.
 brightPi.reset()
 
+LED_ALL = (1, 2, 3, 4, 5, 6, 7, 8)
 LED_IR = LED_ALL[4:8]
 LED_WHITE = LED_ALL[0:4]
 

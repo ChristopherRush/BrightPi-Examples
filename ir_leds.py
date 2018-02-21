@@ -12,10 +12,10 @@ ON = 1
 OFF = 0
 
 leds = LED_WHITE
+try:
+    brightPi.set_led_on_off(leds, OFF)
 
-brightPi.set_led_on_off(leds, OFF)
-
-brightPi.set_led_on_off(LED_IR, ON)
+    brightPi.set_led_on_off(LED_IR, ON)
 
 except KeyboardInterrupt:
     switch_leds_off()

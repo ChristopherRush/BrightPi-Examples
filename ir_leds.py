@@ -1,4 +1,4 @@
-import atexit
+import time
 from brightpi import *
 
 brightPi = BrightPi()
@@ -18,8 +18,5 @@ while True:
     brightPi.set_led_on_off(leds, OFF)
 
     brightPi.set_led_on_off(LED_IR, ON)
-
-def exit_handler():
-    switch_leds_off()
-
-atexit.register(exit_handler)
+    time.sleep(10)
+    brightPi.set_led_on_off(LED_IR, OFF)
